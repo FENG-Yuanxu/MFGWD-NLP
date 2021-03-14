@@ -31,27 +31,3 @@ Here comes our conclusion:
 · From the result above, we can see the single sentiment polarity has relatively low relationship with all the returns.
 · If we used the three sentiment polarity methods all together, Affin, Vader and Blob text and we used these sentiment score all as the inputs of machining learning method, we could predict the positive or negative return of 4-7 days accumulated return well.
 · Besides, the correct rate is above 65%+
-
-
-
-TEST: code chunk
-~~~
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
-~~~
-
-```javascript
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
-```
-
-{% highlight javascript linenos %}
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
-{% endhighlight %}

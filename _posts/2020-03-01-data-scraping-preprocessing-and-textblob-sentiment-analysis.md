@@ -1,14 +1,14 @@
 ---
 layout: post
-title: Introduction
+title: Data Scraping, Preprocessing and TextBlob Sentiment Analysis
 subtitle: Twint Praw TextBlob and OLS regression
 cover-img: /assets/img/path1.jpg
 thumbnail-img: /assets/img/thumb1.png
 share-img: /assets/img/path1.jpg
-tags: [Introduction, Data Preprocessing]
+tags: [Twint, Praw, TextBlob, Regression]
 ---
 
-## Introduction
+## Data Scraping, Preprocessing and TextBlob Sentiment Analysis
 
 We use **Twint** and **Praw** package to scrape data. Then, we use **TextBlob** to analyze sentiment and apply **OLS regression** model.
 

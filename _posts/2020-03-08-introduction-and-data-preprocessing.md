@@ -2,9 +2,9 @@
 layout: post
 title: Introduction And Data Preprocessing
 subtitle: Natural Language Processing Group Project
-cover-img: /assets/img/path.jpg
-thumbnail-img: /assets/img/thumb.png
-share-img: /assets/img/path.jpg
+cover-img: /assets/img/path1.jpg
+thumbnail-img: /assets/img/thumb1.png
+share-img: /assets/img/path1.jpg
 tags: [introduction, data preprocessing]
 ---
 

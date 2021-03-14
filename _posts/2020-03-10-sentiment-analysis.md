@@ -2,10 +2,10 @@
 layout: post
 title: Sentiment Analysis
 subtitle: Using Twitter & Reddit Text Data
-gh-repo: daattali/beautiful-jekyll
-gh-badge: [star, fork, follow]
+cover-img: /assets/img/path2.jpg
+thumbnail-img: /assets/img/thumb2.png
+share-img: /assets/img/path2.jpg
 tags: [sentiment]
-comments: true
 ---
 
 1: Sentiment Polarity and BTC Return we used

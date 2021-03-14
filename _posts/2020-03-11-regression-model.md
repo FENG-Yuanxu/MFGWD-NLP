@@ -1,14 +1,14 @@
 ---
 layout: post
-title: Sentiment Analysis
-subtitle: Using Twitter & Reddit Text Data
+title: Regression Model
+subtitle: Sentiment Polarity and BTC Return
 cover-img: /assets/img/path2.jpg
 thumbnail-img: /assets/img/thumb2.png
 share-img: /assets/img/path2.jpg
 tags: [Sentiment]
 ---
 
-Sentiment Analysis
+Sentiment Polarity and BTC Return
 
 1: Sentiment Polarity and BTC Return we used
 In this part, we use TextBlob to get sentiment polarity.

@@ -220,3 +220,15 @@ plt.savefig('effective_polarity.jpg',dpi=600)
 
 ```
 
+## Conclusion:
+
+From the result above, we can see the sentiment polarity has relatively low relationship with all the returns.
+
+## Potential Problems:
+
+Here are some potential problems in the model.
+
+- The sentiment analyzer may not be able to analyze bloggers text accurately since there may be some financial words and discussions related to BTC.
+- These Bloggers may not be representative. It’s hard to choose suitable bloggers to represent the whole point towards BTC in Twitter and Reddit
+- Though the result in different period seems to show some relationship, but the period may be too short to support this result.
+

@@ -36,9 +36,22 @@ And in this part we use re package to remove some unimportant information in tex
 # Get Twitter Text Data
 
 import pandas as pd
-import twint
+import numpy as np
+from textblob import TextBlob 
+import re
+import warnings
 import nest_asyncio
+import scipy as sp # scientific calculation toolkit
+import statsmodels.api as sm # statistical models including regression
+import statsmodels.formula.api as smf
+import linearmodels as lm # linear models including panel OLS
+import matplotlib.pyplot as plt
+import math
+import seaborn as sns
+import requests as rq
+from wordcloud import WordCloud
 nest_asyncio.apply()
+warnings.filterwarnings('ignore')
 
 bloggers = ['APompliano','NickSzabo4','nic__carter','CarpeNoctom','Melt_Dem','100trillionUSD','MessariCrypto','TuurDemeester',
            'gavinandresen','NickSzabo4','maxkeiser','rogerkver','CremeDelaCrypto',

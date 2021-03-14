@@ -1,14 +1,16 @@
 ---
 layout: post
-title: Introduction and Data Preprocessing
-subtitle: Natural Language Processing Group Project
+title: Introduction
+subtitle: Twint Praw TextBlob and OLS regression
 cover-img: /assets/img/path1.jpg
 thumbnail-img: /assets/img/thumb1.png
 share-img: /assets/img/path1.jpg
 tags: [Introduction, Data Preprocessing]
 ---
 
-## Introduction and Data Preprocessing
+## Introduction
+
+We use **Twint** and **Praw** package to scrape data. Then, we use **TextBlob** to analyze sentiment and apply **OLS regression** model.
 
 ### Background:
 

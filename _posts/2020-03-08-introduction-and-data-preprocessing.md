@@ -1,12 +1,14 @@
 ---
 layout: post
-title: Introduction And Data Preprocessing
+title: Introduction and Data Preprocessing
 subtitle: Natural Language Processing Group Project
 cover-img: /assets/img/path1.jpg
 thumbnail-img: /assets/img/thumb1.png
 share-img: /assets/img/path1.jpg
 tags: [Introduction, Data Preprocessing]
 ---
+
+Introduction and Data Preprocessing
 
 Background:
 
@@ -32,7 +34,7 @@ And in this part we use re package to remove some unimportant information in tex
 
 
 
-
+Data Analysis:
 
 For our first phase of data analysis, we thought knowing what big bloggers feel about Bitcoin is extremely valuable to capture the Bitcoin Price fluctuation. So we first look at how negative or positive felt by big bloggers. We used 3 lexicon-based tweet polarity classifiers to calculate sentiment scores respectively. 
 

@@ -5,8 +5,8 @@ subtitle: We are students from the University of Hong Kong
 ---
 
 ### Our Names:
-MA Yiwei      WANG Siyu  
-GONG Xiaoxiao Deng Yuanyang  
+MA Yiwei | WANG Siyu  
+GONG Xiaoxiao | Deng Yuanyang  
 FENG Yuanxu  
 
 ### Instructor:

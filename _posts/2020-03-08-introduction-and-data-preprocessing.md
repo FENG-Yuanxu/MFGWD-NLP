@@ -8,9 +8,9 @@ share-img: /assets/img/path1.jpg
 tags: [Introduction, Data Preprocessing]
 ---
 
-Introduction and Data Preprocessing
+### Introduction and Data Preprocessing
 
-### Background:
+## Background:
 
 The Internet has grown tremendously in the past decade and with the invention of social media like Twitter, Facebook, sharing knowledge and experiences has become easy. For example, hundreds of thousands of Twitter users generate huge volumes of tweets data every day related to Bitcoin. 
 
@@ -18,13 +18,13 @@ Bitcoin is a decentralized electronic currency system. It has gathered a lot of 
 
 But there is no efficient way of predicting the price of Bitcoin Price even though we dig deeper into the Blockchain. Given that We know that people express their opinions and sentiments through online portals, So it is very important to build a model that can predict the price of Bitcoin using the social media data from the internet. Twitter and Rebbit are perfect social media platforms for us.
 
-### Model Used:
+## Model Used:
 
-In the project, we use the three types of Sentiment analysis Classifiers, the simple OLS regression model，and some popular methods of Machine Learning to do sentiment regression analysis and check our results.
+In the project, we use the three types of **Sentiment analysis Classifiers**, the simple **OLS regression model**，and some popular methods of **Machine Learning** to do sentiment regression analysis and check our results.
 
 Our goal is to capture the Bitcoin return from the sentiment analysis and to predict price  fluctuation for guiding investors’ practices.
 
-### Get Text Data:
+## Get Text Data:
 
 First, we scrape bitcoin price data and bloggers’ tweets to get the original tweets data. We also use PRAW package to scrape Reddit blogs.
 
@@ -89,7 +89,7 @@ total.to_csv('total_tweets.csv')
 
 ```
 
-### Clean Text Data:
+## Clean Text Data:
 
 In this part, we use re package to remove some unimportant information in text, and save the cleaned data.
 
@@ -113,8 +113,11 @@ total.to_csv('cleaned_tweets.csv')
 
 ```
 
-### Sentiment Analysis Using TextBlob Package
+## Sentiment Analysis Using TextBlob Package:
 
+In this part, we use TextBlob package to analyze sentiment.
+
+Here is our code:
 ```javascript
 # BTC Return Calculation And Sentiment Analysis
 

@@ -112,3 +112,87 @@ total["tweet"] = clean
 total.to_csv('cleaned_tweets.csv')
 
 ```
+
+```javascript
+# BTC Return Calculation And Sentiment Analysis
+
+tc_prc = pd.read_csv('BTC-USD.csv')
+
+btc_prc['Date'] = pd.to_datetime(btc_prc['Date'])
+btc_prc['ret'] = btc_prc['Adj Close'].pct_change()
+btc_prc['ret_next'] = btc_prc['ret'].shift(-1)
+btc_prc['ret_next2'] = btc_prc['ret'].shift(-2)
+btc_prc['ret_next3'] = btc_prc['ret'].shift(-3)
+btc_prc['ret_next4'] = btc_prc['ret'].shift(-4)
+btc_prc['ret_next5'] = btc_prc['ret'].shift(-5)
+btc_prc['ret2'] = btc_prc['Adj Close'].pct_change(2).shift(-2)
+btc_prc['ret3'] = btc_prc['Adj Close'].pct_change(3).shift(-3)
+btc_prc['ret4'] = btc_prc['Adj Close'].pct_change(4).shift(-4)
+btc_prc['ret5'] = btc_prc['Adj Close'].pct_change(5).shift(-5)
+
+cleaned_tweets = pd.read_csv('cleaned_tweets.csv')
+cleaned_tweets.dt = pd.to_datetime(cleaned_tweets.dt)
+
+cleaned_reddits = pd.read_csv('cleaned_20200901_20210301_tweets_reddits.csv')
+cleaned_reddits.columns = ['dt','username','tweet']
+cleaned_reddits.dt = pd.to_datetime(cleaned_reddits.dt)
+
+cleaned_tweets = pd.concat([cleaned_tweets, cleaned_reddits]).sort_values('dt')
+
+cleaned_tweets["senti_polarity"] = cleaned_tweets["tweet"].apply(lambda x: TextBlob(x).sentiment.polarity)
+cleaned_tweets["senti_subjectivity"] = cleaned_tweets["tweet"].apply(lambda x: TextBlob(x).sentiment.subjectivity)
+
+fig, ax = plt.subplots(figsize=(12,8))
+btc_prc.set_index('Date')['Adj Close'].plot(ax=ax)
+ax.set_ylabel('Price')
+ax.set_title('BTC Price')
+plt.savefig('BTC_price.jpg',dpi=600)
+
+# Calculate sentiment polarity mean for each day
+sentiment_score = cleaned_tweets.groupby('dt').mean()
+sentiment_score.index.name = 'Date'
+sentiment_score.reset_index(inplace=True)
+sentiment_score
+
+fig, ax = plt.subplots(figsize=(12,8))
+sentiment_score.set_index('Date')[['senti_polarity','senti_subjectivity']].plot(ax=ax)
+ax.set_title('Sentiment Polarity & Subjectivity Every Day')
+plt.savefig('Sentiment.jpg',dpi=600)
+
+# merge each day's sentiment polarity and BTC's future returns
+sentiment_score = pd.merge(
+    sentiment_score,
+    btc_prc[['Date','ret_next','ret_next2','ret_next3','ret_next4','ret_next5','ret2','ret3','ret4','ret5']],
+    on='Date'
+)
+
+# OLS regression with one variable, save the beta, t-value, p-value and r-squared
+dic = {}
+start_date = '2020-09-01'
+end_date = '2021-03-01'
+for ret in ['ret_next','ret_next2','ret_next3','ret_next4','ret_next5','ret2','ret3','ret4','ret5']:
+    model = smf.ols('%s ~ senti_polarity'%ret, 
+                    data=sentiment_score[
+        (sentiment_score.Date>start_date) & (sentiment_score.Date<end_date)]).fit()
+    beta = model.params[1]
+    t = model.tvalues[1]
+    p = model.pvalues[1]
+    r = model.rsquared
+    dic[ret] = [beta,t,p,r]
+res = pd.DataFrame.from_dict(dic, 'columns')
+res.index = ['Polarity','t','p','r']
+res.to_csv('res_%s_to_%s.csv'%(start_date,end_date))
+
+smf.ols('ret_next ~ senti_polarity', data=sentiment_score).fit().summary()
+
+fig,ax = plt.subplots(figsize=(14,8))
+ax1 = ax.twinx()
+sentiment_score.set_index('Date')['senti_polarity'].plot(ax=ax, label='Senti_polarity(Left)',color='r')
+sentiment_score.set_index('Date')['ret_next4'].plot(ax=ax1, label='BTC Daily Return 4 Days Later(Right)',color='b')
+ax.set_ylabel('Senti_polarity')
+ax1.set_ylabel('Daily Ret')
+lines, labels = ax.get_legend_handles_labels()
+lines2, labels2 = ax1.get_legend_handles_labels()
+ax1.legend(lines + lines2, labels + labels2, loc=0)
+plt.savefig('polarity_ret.jpg',dpi=600)
+```

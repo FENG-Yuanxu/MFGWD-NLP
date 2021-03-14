@@ -1,18 +1,20 @@
 ---
 layout: post
-title: Regression Model
-subtitle: Sentiment Polarity and BTC Return
+title: Vader Sentiment Analysis
+subtitle: Vader WordCloud and Regression Analysis
 cover-img: /assets/img/path3.jpg
 thumbnail-img: /assets/img/thumb3.png
 share-img: /assets/img/path3.jpg
-tags: [Regression]
+tags: [Vader, WordCloud, Regression]
 ---
 
-## Sentiment Polarity, WordCloud and OLS regression
+## Vader Sentiment Polarity, WordCloud and OLS regression
 
-In this part, we use **TextBlob**, **Vader** to get sentiment polarity, and we use simple **OLS regression** model.
+In this part, we use **Vader** to get sentiment polarity, and we use simple **OLS regression** model.
 
-## TextBlob and WordCloud
+## Sentiment Polarity and WordCloud
+
+We first use **TextBlob** to create **WordCloud**. Then, we use **Vader**.
 
 Here is our code:
 ```javascript

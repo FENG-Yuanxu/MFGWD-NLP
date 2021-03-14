@@ -2,9 +2,9 @@
 layout: post
 title: Machine Learning Application
 subtitle: In the prediction of the positive or negative return of Bitcoin
-cover-img: /assets/img/path2.jpg
-thumbnail-img: /assets/img/thumb2.png
-share-img: /assets/img/path2.jpg
+cover-img: /assets/img/path4.jpg
+thumbnail-img: /assets/img/thumb4.png
+share-img: /assets/img/path4.jpg
 tags: [Machine Learning]
 ---
 

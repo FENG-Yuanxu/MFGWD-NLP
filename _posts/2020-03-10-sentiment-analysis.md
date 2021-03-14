@@ -8,6 +8,8 @@ share-img: /assets/img/path2.jpg
 tags: [Sentiment]
 ---
 
+Sentiment Analysis
+
 1: Sentiment Polarity and BTC Return we used
 In this part, we use TextBlob to get sentiment polarity.
 

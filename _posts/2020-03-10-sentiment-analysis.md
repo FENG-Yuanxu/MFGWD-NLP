@@ -80,7 +80,7 @@ After the above steps, we found that Sentiment analysis can be extremely valuabl
 
 Here are some observations. As you can see, “positive” frequently contain words like “great”, “legendary”, “join”, and “best”. We also have negative sentiment word cloud for Bitcoin. In this case, it contains words like “hate”, “hell”, and “funeral”
 
-The word clouds served as a great stimulus with which to gather an initial impression of the corpus, but we want to know more about the relationship between polarity score with Bitcoin daily return. Now let’s welcome my teammate to talk more about this part.
+The word clouds served as a great stimulus with which to gather an initial impression of the corpus, but we want to know more about the relationship between polarity score with Bitcoin daily return. So, we carry on regression model and machine learning methods.
 
 Here is our code:
 ```javascript

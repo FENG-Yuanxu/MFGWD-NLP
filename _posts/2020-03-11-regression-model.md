@@ -5,7 +5,7 @@ subtitle: Sentiment Polarity and BTC Return
 cover-img: /assets/img/path3.jpg
 thumbnail-img: /assets/img/thumb3.png
 share-img: /assets/img/path3.jpg
-tags: [Sentiment]
+tags: [Regression]
 ---
 
 Sentiment Polarity and BTC Return

@@ -1,26 +1,34 @@
 ---
 layout: post
-title: Sentiment Analysis
-subtitle: Using Twitter & Reddit Text Data
+title: Machine Learning Application
+subtitle: In the prediction of the positive or negative return of Bitcoin
 cover-img: /assets/img/path2.jpg
 thumbnail-img: /assets/img/thumb2.png
 share-img: /assets/img/path2.jpg
-tags: [Sentiment]
+tags: [Machine Learning]
 ---
 
-Sentiment Analysis
+In the prediction of the positive or negative return of Bitcoin
 
-1: Sentiment Polarity and BTC Return we used
-In this part, we use TextBlob to get sentiment polarity.
+In this part, we use the machining learning to explore and predict the negative or positive return of the incoming single day; and the return of holding Bitcoin for several accumulated days.
 
-2: Sentiment Polarity Regression Model
-In this part, we use simple OLS regression model below:
+As the previous analysis, we know that the sentiment classifier we use, either Text Blob, Affin, or the Vader can not perform well to forecast the positive or the negative return of Bitcoin independently.
 
-3: Conclusion
-From the result above, we can see the sentiment polarity has relatively low relationship with all the returns.
+We want to see whether if we can use all these factors all together to predict. So we introduce the machining learning.
+As for the inputs, in the chart, from our text analysis, we can see the seven sentiment features of our data set.
 
-4: Potential Problems
-Here are some potential problems in the model.
-(1)	The TextBlob may not be able to analyze bloggers text accurately since there may be some financial words and discussions related to BTC.
-(2)	These Bloggers may not be representative. It’s hard to choose suitable bloggers to represent the whole point towards BTC in Twitter and Reddit
-(3)	Though the result in different period seems to show some relationship, but the period may be too short to support this result.
+As for the targets, we would like to explore whether the seven sentiment features might be used to predict the accumulated return and the single daily return.
+
+The accumulated return means that the return of holding the bitcoin for several days, and our task is to forecast whether the return is positive or negative; besides we short negative for N and short positive for P.
+
+We used 10-fold cross-validation and test the traditional machining learning model, such as SVM, artificial neutral networks, logistics, naïve Bayes, decision tree, KNN and so on. 
+
+We can see that Logistics and Artificial neural networks performs well in the prediction of accumulated return.
+
+The below is about five days accumulated return by artificial neutral network.  And we can see the percent of correctly classified instances is over 67%.
+
+Here comes our conclusion:
+· From the result above, we can see the single sentiment polarity has relatively low relationship with all the returns.
+· If we used the three sentiment polarity methods all together, Affin, Vader and Blob text and we used these sentiment score all as the inputs of machining learning method, we could predict the positive or negative return of 4-7 days accumulated return well.
+· Besides, the correct rate is above 65%+
+

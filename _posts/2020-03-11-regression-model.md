@@ -2,9 +2,9 @@
 layout: post
 title: Regression Model
 subtitle: Sentiment Polarity and BTC Return
-cover-img: /assets/img/path2.jpg
-thumbnail-img: /assets/img/thumb2.png
-share-img: /assets/img/path2.jpg
+cover-img: /assets/img/path3.jpg
+thumbnail-img: /assets/img/thumb3.png
+share-img: /assets/img/path3.jpg
 tags: [Sentiment]
 ---
 

@@ -5,7 +5,7 @@ subtitle: Affin WordCloud and Regression Analysis
 cover-img: /assets/img/path2.jpg
 thumbnail-img: /assets/img/thumb2.png
 share-img: /assets/img/path2.jpg
-tags: [Affin]
+tags: [Affin, WordCloud, Regression]
 ---
 
 ### Affin Sentiment Analysis

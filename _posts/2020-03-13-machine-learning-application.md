@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Machine Learning Application
-subtitle: In the prediction of the positive or negative return of Bitcoin
+subtitle: In the Prediction of Positive or Negative Return of Bitcoin
 cover-img: /assets/img/path4.jpg
 thumbnail-img: /assets/img/thumb4.png
 share-img: /assets/img/path4.jpg
@@ -32,3 +32,26 @@ Here comes our conclusion:
 · If we used the three sentiment polarity methods all together, Affin, Vader and Blob text and we used these sentiment score all as the inputs of machining learning method, we could predict the positive or negative return of 4-7 days accumulated return well.
 · Besides, the correct rate is above 65%+
 
+
+
+TEST: code chunk
+~~~
+var foo = function(x) {
+  return(x + 5);
+}
+foo(3)
+~~~
+
+```javascript
+var foo = function(x) {
+  return(x + 5);
+}
+foo(3)
+```
+
+{% highlight javascript linenos %}
+var foo = function(x) {
+  return(x + 5);
+}
+foo(3)
+{% endhighlight %}

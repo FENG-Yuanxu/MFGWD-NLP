@@ -1,14 +1,14 @@
 ---
 layout: post
 title: Machine Learning Application
-subtitle: In the Prediction of Positive or Negative Return of Bitcoin
-cover-img: /assets/img/path4.jpg
-thumbnail-img: /assets/img/thumb4.png
-share-img: /assets/img/path4.jpg
+subtitle: Predict Positive or Negative Return of Bitcoin
+cover-img: /assets/img/path5.jpg
+thumbnail-img: /assets/img/thumb5.png
+share-img: /assets/img/path5.jpg
 tags: [Machine Learning]
 ---
 
-## In the prediction of the positive or negative return of Bitcoin
+## Predict Positive or Negative Return of Bitcoin
 
 In this part, we use the **machining learning** to explore and predict the negative or positive return of the incoming single day; and the return of holding Bitcoin for several accumulated days.
 

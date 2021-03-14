@@ -10,28 +10,25 @@ tags: [Introduction, Data Preprocessing]
 
 Introduction and Data Preprocessing
 
-Background:
+### Background:
 
-The Internet has grown tremendously in the past decade and with the invention of social media like Twitter, Facebook,  sharing knowledge and experiences has become easy. For example, hundreds of thousands of Twitter users generate huge volumes of tweets data every day related to Bitcoin. 
+The Internet has grown tremendously in the past decade and with the invention of social media like Twitter, Facebook, sharing knowledge and experiences has become easy. For example, hundreds of thousands of Twitter users generate huge volumes of tweets data every day related to Bitcoin. 
 
 Bitcoin is a decentralized electronic currency system. It has gathered a lot of attraction from people during the recent times and its price has been volatile, which just fluctuates constantly on real time like a stock exchange. 
 
 But there is no efficient way of predicting the price of Bitcoin Price even though we dig deeper into the Blockchain. Given that We know that people express their opinions and sentiments through online portals, So it is very important to build a model that can predict the price of Bitcoin using the social media data from the internet. Twitter and Rebbit are perfect social media platforms for us.
 
-Model Used:
+### Model Used:
 
 In the project, we use the three types of Sentiment analysis Classifiers, the simple OLS regression model，and some popular methods of Machine Learning to do sentiment regression analysis and check our results.
 
 Our goal is to capture the Bitcoin return from the sentiment analysis and to predict price  fluctuation for guiding investors’ practices.
 
-Get Text Data:
+### Get Text Data:
 
 First, we scrape bitcoin price data and bloggers’ tweets to get the original tweets data. We also use PRAW package to scrape Reddit blogs.
 
-Clean Text Data:
-
-And in this part we use re package to remove some unimportant information in text, and save the cleaned data.
-
+Here is our code:
 ```javascript
 # Get Twitter Text Data
 
@@ -92,10 +89,13 @@ total.to_csv('total_tweets.csv')
 
 ```
 
+### Clean Text Data:
+
+In this part, we use re package to remove some unimportant information in text, and save the cleaned data.
+
+Here is our code:
 ```javascript
 # Clean Text Data
-
-import re
 
 clean = total["tweet"].str.lower()
 clean = clean.apply(lambda x :re.sub('@[a-z]*','',x))      # Remove tags
@@ -112,6 +112,8 @@ total["tweet"] = clean
 total.to_csv('cleaned_tweets.csv')
 
 ```
+
+### Sentiment Analysis Using TextBlob Package
 
 ```javascript
 # BTC Return Calculation And Sentiment Analysis
@@ -148,25 +150,21 @@ ax.set_ylabel('Price')
 ax.set_title('BTC Price')
 plt.savefig('BTC_price.jpg',dpi=600)
 
-# Calculate sentiment polarity mean for each day
 sentiment_score = cleaned_tweets.groupby('dt').mean()
 sentiment_score.index.name = 'Date'
 sentiment_score.reset_index(inplace=True)
 sentiment_score
 
-fig, ax = plt.subplots(figsize=(12,8))
 sentiment_score.set_index('Date')[['senti_polarity','senti_subjectivity']].plot(ax=ax)
 ax.set_title('Sentiment Polarity & Subjectivity Every Day')
 plt.savefig('Sentiment.jpg',dpi=600)
 
-# merge each day's sentiment polarity and BTC's future returns
 sentiment_score = pd.merge(
     sentiment_score,
     btc_prc[['Date','ret_next','ret_next2','ret_next3','ret_next4','ret_next5','ret2','ret3','ret4','ret5']],
     on='Date'
 )
 
-# OLS regression with one variable, save the beta, t-value, p-value and r-squared
 dic = {}
 start_date = '2020-09-01'
 end_date = '2021-03-01'

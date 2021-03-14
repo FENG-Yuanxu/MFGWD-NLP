@@ -12,6 +12,7 @@ tags: [Regression]
 
 In this part, we use **TextBlob** to get sentiment polarity, and we use simple **OLS regression** model below.
 
+Here is our code:
 ```javascript
 # Read Data
 import pandas as pd

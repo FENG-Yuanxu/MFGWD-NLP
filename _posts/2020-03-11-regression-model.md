@@ -8,9 +8,11 @@ share-img: /assets/img/path3.jpg
 tags: [Regression]
 ---
 
-## Regression Model
+## Sentiment Polarity, WordCloud and OLS regression
 
-In this part, we use **TextBlob** to get sentiment polarity, and we use simple **OLS regression** model below.
+In this part, we use **TextBlob**, **Vader** to get sentiment polarity, and we use simple **OLS regression** model.
+
+## TextBlob and WordCloud
 
 Here is our code:
 ```javascript
@@ -132,7 +134,11 @@ plt.axis("off")
 plt.savefig('Vader_negative.jpg',dpi=600)
 
 cleaned_tweets.to_csv('cleaned_tweets_vader.csv')
+```
+### OLS regression
 
+Here is our code:
+```javascript
 btc_prc = pd.read_csv('BTC-USD.csv')
 btc_prc['Date'] = pd.to_datetime(btc_prc['Date'])
 btc_prc['ret'] = btc_prc['Adj Close'].pct_change()
@@ -190,9 +196,7 @@ lines, labels = ax.get_legend_handles_labels()
 lines2, labels2 = ax1.get_legend_handles_labels()
 ax1.legend(lines + lines2, labels + labels2, loc=0)
 plt.savefig('Vader_Compound.jpg',dpi=600)
-
 ```
-
 
 ## Conclusion:
 

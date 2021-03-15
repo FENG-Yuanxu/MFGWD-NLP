@@ -224,6 +224,11 @@ plt.savefig('effective_polarity.jpg',dpi=600)
 
 From the result above, we can see the sentiment polarity has relatively low relationship with all the returns.
 
+Sentiment has different effect during different period: 
+
+- From 2020-09-01 to 2020-12-31, the sentiment seems to have significantly negative relationship with the daily return 4 days later.
+- From 2021-01-01 to 2021-03-01, the sentiment seems to have significantly negative relationship with daily return 1 day later, and positive relationship with daily return 3 days later.
+
 ## Potential Problems:
 
 Here are some potential problems in the model.

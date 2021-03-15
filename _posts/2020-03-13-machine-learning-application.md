@@ -6,6 +6,7 @@ cover-img: /assets/img/path5.jpg
 thumbnail-img: /assets/img/thumb5.png
 share-img: /assets/img/path5.jpg
 tags: [Machine Learning]
+comments: true
 ---
 
 ## Predict Positive or Negative Return of Bitcoin

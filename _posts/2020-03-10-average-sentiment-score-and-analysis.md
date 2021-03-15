@@ -6,6 +6,7 @@ cover-img: /assets/img/path4.jpg
 thumbnail-img: /assets/img/thumb4.png
 share-img: /assets/img/path4.jpg
 tags: [Average Sentiment Score, Sentiment Analysis]
+comments: true
 ---
 
 ## Getting Effective Sentiment of a tweet/blog

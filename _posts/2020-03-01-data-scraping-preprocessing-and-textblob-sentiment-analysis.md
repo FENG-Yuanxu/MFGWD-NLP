@@ -89,6 +89,57 @@ df.index = range(len(df))
 total = df.drop_duplicates().sort_values(['dt','username']).set_index(['dt'])
 total.to_csv('total_tweets.csv')
 
+# Get Reddit Text Data
+
+import asyncpraw
+import pandas as pd
+import datetime as dt
+
+reddit = asyncpraw.Reddit(
+    client_id="I45HWugJC0iJ7g",
+    client_secret="FBG1ftO9kpYdUrTz7KaxUWhvDpXNPQ",
+    password="nlp20210306",
+    user_agent="NLP_Bitcoin",
+    username="yuanxufeng")
+
+topics_dict = { "title":[], \
+                "score":[], \
+                "id":[], "url":[], \
+                "comms_num": [], \
+                "created": [], \
+                "body":[]}
+
+urls = [
+        'r/Bitcoin/', 'r/BitcoinBeginners/', 'r/BitcoinPrivate/', 'r/CryptoMarkets/',
+        'r/BitcoinMarkets/', 'r/BitcoinMining/', 'r/bitcoinxt/', 'r/btc/',
+        'r/bitcoin_uncensored/', 'r/BitcoinUK/', 'r/CryptoCurrencies/',
+        'r/BitcoinAirdrops/', 'r/Bitcoincash/', 'r/CryptoCurrency/', 'r/BitcoinCA/',
+        'r/bitcoincashSV/', 'r/Crypto_Currency_News/', 'r/BitcoinAUS/',
+        'r/CryptoCurrencyTrading/', 'r/BitcoinSerious/']
+
+for url in urls:
+    url = url[2:-1]
+    subreddit = await reddit.subreddit(url)
+    top_subreddit = subreddit.top(limit=2000) # maximum 1000
+    
+    async for submission in top_subreddit:
+        topics_dict["title"].append(submission.title)
+        topics_dict["score"].append(submission.score)
+        topics_dict["id"].append(submission.id)
+        topics_dict["url"].append(submission.url)
+        topics_dict["comms_num"].append(submission.num_comments)
+        topics_dict["created"].append(submission.created)
+        topics_dict["body"].append(submission.selftext)
+
+topics_data = pd.DataFrame(topics_dict)
+
+def get_date(created):
+    return dt.datetime.fromtimestamp(created)
+_timestamp = topics_data["created"].apply(get_date)
+topics_data = topics_data.assign(timestamp = _timestamp)
+
+topics_data.to_csv('reddit_bitcoin.csv', index=False) 
+
 ```
 
 ### Clean Text Data:

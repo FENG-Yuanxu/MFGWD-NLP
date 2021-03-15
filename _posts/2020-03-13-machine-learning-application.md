@@ -18,23 +18,23 @@ We want to see whether if we can use all these factors all together to predict. 
 
 As for the **inputs**, in the chart, from our text analysis, we can see the seven sentiment features of our data set.
 
-<img src="/assets/img/img51.png"  alt="Seven Sentiment Features" />
+![image](/assets/img/img51.jpg)
 
 As for the **targets**, we would like to explore whether the seven sentiment features might be used to predict the accumulated return and the single daily return.
 
 The accumulated return means that the return of holding the bitcoin for several days, and our task is to forecast whether the return is positive or negative; besides we short negative for N and short positive for P.
 
-<img src="/assets/img/img52.png"  alt="Negative or Positive" />
+![image](/assets/img/img52.jpg)
 
 We used 10-fold cross-validation and test the traditional machining learning model, such as SVM, artificial neutral networks, logistics, naïve Bayes, decision tree, KNN and so on. 
 
-<img src="/assets/img/img53.png"  alt="Machining Learning Model" />
+![image](/assets/img/img53.jpg)
 
 We can see that Logistics and Artificial neural networks performs well in the prediction of accumulated return.
 
 The below is about five days accumulated return by artificial neutral network.  And we can see the percent of correctly classified instances is over 67%.
 
-<img src="/assets/img/img54.png"  alt="Artificial Neutral Network" />
+![image](/assets/img/img54.jpg)
 
 ### Machine Learning Application
 

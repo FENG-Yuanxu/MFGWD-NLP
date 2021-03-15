@@ -36,6 +36,70 @@ The below is about five days accumulated return by artificial neutral network.  
 
 <img src="/assets/img/img54.jpg"  alt="Artificial Neutral Network" />
 
+### Machine Learning Application
+
+Here is our code:
+```javascript
+import pandas as pd
+ab=pd.read_csv('Data Analysis_Machine Learning_Five Days.csv')
+feature_names = ['Text_Blob_polarity', 'Text_Blob_subjectivity', 'Vader_Pos', 'Vader_Neg','Vader_Compound','Affin_Score']
+X = ab[feature_names]
+y = ab['five_days_accumulated_return']
+
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)
+
+from sklearn.preprocessing import MinMaxScaler
+scaler = MinMaxScaler()
+X_train = scaler.fit_transform(X_train)
+X_test = scaler.transform(X_test)
+
+from sklearn.linear_model import LogisticRegression
+logreg = LogisticRegression()
+logreg.fit(X_train, y_train)
+print('Accuracy of Logistic regression classifier on training set: {:.2f}'
+    .format(logreg.score(X_train, y_train)))
+print('Accuracy of Logistic regression classifier on test set: {:.2f}'
+    .format(logreg.score(X_test, y_test)))
+
+from sklearn.neighbors import KNeighborsClassifier
+knn=KNeighborsClassifier()
+knn.fit(X_train, y_train)
+print('Accuracy of KNN classifier on training set: {:.2f}'
+    .format(knn.score(X_train, y_train)))
+print('Accuracy of KNN classifier on test set: {:.2f}'
+    .format(knn.score(X_test, y_test)))
+
+from sklearn.naive_bayes import GaussianNB
+gnb=GaussianNB()
+gnb.fit(X_train, y_train)
+print('Accuracy of Bayes classifier on training set: {:.2f}'
+    .format(gnb.score(X_train, y_train)))
+print('Accuracy of Bayes classifier on test set: {:.2f}'
+    .format(gnb.score(X_test, y_test)))
+
+from sklearn.neural_network import MLPClassifier
+mlpc=MLPClassifier(max_iter=10000)
+mlpc.fit(X_train, y_train)
+print('Accuracy of Neural network classifier on training set: {:.2f}'
+    .format(gnb.score(X_train, y_train)))
+print('Accuracy of Neural network classifier on test set: {:.2f}'
+    .format(gnb.score(X_test, y_test)))
+
+from sklearn.model_selection import cross_val_score
+accuracy_logreg=cross_val_score(logreg,X,y,scoring='accuracy',cv=10)
+print('Accuracy of Logistic regression classifier on 10-fold cross-validation:',accuracy_logreg.mean())
+
+accuracy_knn=cross_val_score(knn,X,y,scoring='accuracy',cv=10)
+print('Accuracy of KNN classifier on 10-fold cross-validation:',accuracy_knn.mean())
+
+accuracy_gnb=cross_val_score(gnb,X,y,scoring='accuracy',cv=10)
+print('Accuracy of Bayes classifier on 10-fold cross-validation:',accuracy_gnb.mean())
+
+accuracy_mlpc=cross_val_score(mlpc,X,y,scoring='accuracy',cv=10)
+print('Accuracy of Neural Network classifier on 10-fold cross-validation:',accuracy_mlpc.mean())
+```
+
 ### Here comes our conclusion:
 
 - From the result above, we can see the single sentiment polarity has relatively low relationship with all the returns.

@@ -6,6 +6,7 @@ cover-img: /assets/img/path1.jpg
 thumbnail-img: /assets/img/thumb1.png
 share-img: /assets/img/path1.jpg
 tags: [Twint, Praw, TextBlob, Regression]
+comments: true
 ---
 
 ## Data Scraping, Preprocessing and TextBlob Sentiment Analysis

@@ -5,9 +5,9 @@ subtitle: We are students from the University of Hong Kong
 ---
 
 ### Our Names:
+FENG Yuanxu &nbsp;&nbsp;&nbsp;
 MA Yiwei &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WANG Siyu  
-GONG Xiaoxiao &nbsp;&nbsp;&nbsp; Deng Yuanyang  
-FENG Yuanxu  
+GONG Xiaoxiao &nbsp;&nbsp;&nbsp; Deng Yuanyang   
 
 ### Instructor:
 Dr. Matthias Buehlmaier

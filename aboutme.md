@@ -5,7 +5,7 @@ subtitle: We are students from the University of Hong Kong
 ---
 
 ### Our Names:
-FENG Yuanxu &nbsp;&nbsp;&nbsp;
+FENG Yuanxu
 MA Yiwei &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WANG Siyu  
 GONG Xiaoxiao &nbsp;&nbsp;&nbsp; Deng Yuanyang   
 
